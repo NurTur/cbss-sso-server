@@ -1,0 +1,66 @@
+<html>
+	<meta name="robots" content="noindex">
+	<meta charset="utf-8">
+	<title>Projects / Crypto Keys Editor</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet" type="text/css">
+	<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+	<link href="/editor_tmpl/css/hint.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/editor_tmpl/css/reset.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/editor_tmpl/css/style.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+	{{#if isAuth}}
+		<div class="msg">SSO аутентифицирован</div>
+	{{else if projects }}
+
+		<!-- Form for adding project -->
+		<div class="display_form"></div>
+		<div class="add_form">
+			<table>
+				<tr><td colspan="2" class="close_window">
+					<div class="f-left"><b>Добавление проекта</b></div><div class="f-right"><a id="close">Закрыть</a></div>
+				</td></tr>
+				<tr>
+					<td>Проект</td><td><input type="text" id="project" placeholder="http://example.com/"></td>
+				</tr>
+				<tr>
+					<td>Ключ</td>
+					<td><input type="text" id="crypto_key"><span id="generate"><img align="absmiddle" src="/editor_tmpl/img/refresh.png"></span></td>
+				</tr>
+				<tr><td colspan="2" class="cr-td"><div id="add" class="set_project">Создать проект</div></td></tr>
+			</table>
+		</div>
+		<!-- // Form for adding project -->
+
+		<center><img class="logo" src="/editor_tmpl/img/sso_editor_logo.png"></center>
+		<div class="main_block">
+			<div class="add_project">Создать проект</div>
+			<table id="projects">
+			{{#each projects}}
+				<tr id="db{{this.id}}">
+					<td><div id="res{{this.id}}" class="circle"></div></td>
+					<td>
+						{{#if this.is_active}}
+							<div class="is_active ok hint--top" db-id="{{this.id}}" status="0" data-hint="Ключ активен"></div>
+						{{else}}
+							<div class="is_active not_ok hint--top" db-id="{{this.id}}" status="1" data-hint="Ключ не активен"></div>
+						{{/if}}
+					</td>
+					<td>
+						<span class="display">{{this.project}}</span>
+						<input type="text" class="edit" db-id="{{this.id}}" field="project" value="{{this.project}}">
+					</td>
+					<td>
+						<span class="display">{{this.crypto_key}}</span>
+						<input type="text" class="edit" db-id="{{this.id}}" field="crypto_key" value="{{this.crypto_key}}">
+					</td>
+					<td><div class="delete hint--top" data-hint="Удалить проект" db-id="{{this.id}}"></div></td>
+				</tr>
+			{{/each}}
+			</table>
+		</div>
+	{{/if}}
+
+<script src="/editor_tmpl/js/editor.js"></script>
+</body>
+</html>

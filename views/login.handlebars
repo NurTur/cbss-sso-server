@@ -1,0 +1,64 @@
+<html>
+	<meta name="robots" content="noindex">
+	<meta charset="utf-8">
+	<title>Аутентификационный центр CBS</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet" type="text/css">
+	<script src="/jquery-2.2.3.min.js"></script>
+	<link rel="stylesheet" href="/login_tmpl/css/bootstrap3.3.6.min.css">
+	<link rel="stylesheet" href="/login_tmpl/css/login.css">
+</head>
+<body>
+	{{#if isAuth}}
+		<br><br><br><br>
+		<center>
+			<img class="avatar" align="absmiddle" src="{{ssoDomain}}avatars/{{avaName}}.png"><br>
+			<b>{{name}}</b> (Роль: {{role}}, отдел: {{department}})<br><br>
+			<a href="/action/logout">Выйти</a>
+		</center>
+		<!-- <div class="msg">SSO аутентифицирован<br><br></div> -->
+	{{else if isCallback }}
+		<div class="msg">Ошибка. Невозможно аутентифицировать данный ресурс.</div>
+	{{else if urls }}
+		<div id="is_active" class="loader">Выход из системы...</div>
+		{{#each urls}}
+		<iframe src="{{this}}" style="display:none;"></iframe>
+		{{/each}}
+	{{else}}
+	<div class="container-fluid login_page">
+		<div class="row">
+		<h3><img width="267" src="/login_tmpl/img/sso_logo.png"></h3>
+		<div class="main">
+			<form role="form" action="{{ssoDomain}}auth" method="post">
+			<div class="form-group">
+				<label for="inputUsernameEmail">Логин</label>
+				<input type="text" class="form-control" name="login" value="" maxlength="60">
+			</div>
+			<div class="form-group">
+				<label for="inputPassword">Пароль</label>
+				<input type="password" class="form-control" name="pass_val" value="" maxlength="60">
+				<input type="hidden" class="form-control" name="password" value="">
+			</div>
+			<div class="form-group">
+				<input type="checkbox" name="foreign_computer" checked="checked" id="foreign_computer" style="padding-top:3px; margin-right: 5px;">
+				<label for="foreign_computer" style="font-size:14px; font-weight: normal;">Чужой компьютер </label>
+				<input type="hidden" name="callback_url" value="{{callbackUrl}}">
+			</div>
+			<button type="submit" style="margin-top:20px;" class="btn btn-lg btn-primary btn-block">
+				Войти
+			</button>
+			</form>
+		</div>
+		</div>
+	</div>
+	{{/if}}
+	<script>
+		$(window).load(function() {
+			$('#is_active').fadeOut(function() {
+				window.location = '{{callbackUrl}}';
+			});
+		});
+	</script>
+	<script src="/login_tmpl/js/login.js"></script>
+</body>
+</html>

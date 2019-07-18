@@ -1,0 +1,15 @@
+{
+	"appenders": [
+		{
+			"type"  : "console",
+			"level" : "ALL"
+		},
+		{
+			"type"       : "file",
+			"filename"   : "logs/journal.log",
+			"level"      : "ALL",
+			"maxLogSize" : 204800,
+			"backups"    : 10
+		}
+	]
+}

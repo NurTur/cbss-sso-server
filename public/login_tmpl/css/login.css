@@ -1,0 +1,139 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	background-color:#fafafa;
+}
+
+.loader {
+	margin: 0 auto;
+	width: 190px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	background-image: url(/login_tmpl/img/preloader.gif);
+	background-position: left;
+	background-repeat: no-repeat;
+	padding-left: 35px;
+	margin-top: 150px;
+	height: 25px;
+}
+
+.msg {
+	margin: 0 auto;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	margin-top: 150px;
+}
+
+
+a {
+	color: #343434;
+	text-decoration: underline;
+}
+a:hover {
+	color: #101010;
+	text-decoration: none;
+}
+a:active {
+	color: #101010;
+}
+a:focus {
+	color: #101010;
+}
+
+/* Container */
+.container-fluid {
+	padding: 0px 25px 0px 25px;
+}
+
+
+/* Button edit overwrite */
+.btn {
+	padding: 6px 8px;
+	border: 0 none;
+	letter-spacing: 1px;
+	font-size: 14px;
+	border-radius: 4px;
+	font-weight: bold;
+	letter-spacing: 0px;
+	border-radius: 0px;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+	outline: 0 none;
+	background: #f7f7f7;
+	border: solid 1px #ccc;
+	color: #343434;
+}
+
+.btn-primary {
+	background: #f7f7f7;
+	background: -moz-linear-gradient(top,  #fff 0%, #eee 100%);
+	background: -webkit-linear-gradient(top,  #fff 0%,#eee 100%);
+	background: linear-gradient(to bottom,  #fff 0%,#eee 100%);
+	color: #343434;
+	border: solid 1px #ccc;
+}
+
+.btn-primary:hover {
+	background: #fff;
+	background: -moz-linear-gradient(top,  #fff 0%, #f1f1f1 100%);
+	background: -webkit-linear-gradient(top,  #fff 0%,#f1f1f1 100%);
+	background: linear-gradient(to bottom,  #fff 0%,#f1f1f1 100%);
+	border: solid 1px #ccc;
+	color: #343434;
+}
+
+
+
+
+.login_page {
+}
+
+.login_page .main {
+	max-width: 300px;
+	margin: 0 auto;
+	padding:20px;
+	margin-top:10px;
+}
+.login_page h3 {
+	text-align: center;
+	line-height: 300%;
+}
+
+/* Button overwrite (login button) */
+.login_page .btn {
+	padding: 9px 8px;
+	font-size: 14px;
+}
+
+/* Inputs overwrite */
+.login_page .form-control {
+	padding-left: 6px;
+	border-radius: 0px;
+}
+.login_page .form-control:focus {
+	border-color: #aaa;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 5px rgba(124,124,124,.2);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 5px rgba(124,124,124,.2);
+	border-radius: 0px;
+}
+
+.foreign_cb {
+	padding-top:3px; margin-right: 5px;
+}
+.foreign_lb {
+	font-size:14px; font-weight: normal;
+}
+
+
+.avatar {
+	-webkit-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.56);
+	-moz-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.56);
+	box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.56);
+	margin: 10px 0px 10px 0px;
+}

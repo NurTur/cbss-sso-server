@@ -1,0 +1,44 @@
+/* Reset */
+html, body {
+	height: 100%;
+}
+body {
+	margin: 0px;
+	padding: 0px;
+	font-weight: 400;
+	color: #000000;
+}
+h1, h2, h3 {
+	margin: 0;
+	padding: 0;
+}
+p, ol, ul {
+	margin-top: 0;
+}
+ol, ul {
+	padding: 0;
+	list-style: none;
+}
+p {
+	line-height: 180%;
+}
+b, strong {
+	font-weight:700;
+}
+img {
+	border:0px;
+}
+a {
+	color: #000;
+	text-decoration: underline;
+}
+a:hover {
+	text-decoration: underline;
+}
+.container {
+	width: 1000px;
+	margin: 0px auto;
+}
+
+.r { border:solid 1px #f00; }
+.b { border:solid 1px #00f; }
