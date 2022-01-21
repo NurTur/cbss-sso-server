@@ -16,7 +16,7 @@
     "express": "^4.13.4",
     "ldapjs": "^1.0.0",
     "lodash": "^4.13.1",
-    "log4js": "^1.0.1",
+    "log4js": "^6.4.0",
     "method-override": "^2.3.5",
     "mysql": "^2.10.2",
     "node-yaml-config": "0.0.4",
